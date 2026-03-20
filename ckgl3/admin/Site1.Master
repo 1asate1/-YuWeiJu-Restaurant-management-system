@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ckgl.admin.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style3 {
+            width: 190px;
+            height: 186px;
+        }
+        .auto-style4 {
+            height: 186px;
+        }
+        .auto-style5 {
+            height: 269px;
+        }
+      #sidebar-cell {
+            width: 170px;
+            padding-top: 30px;
+            height: 500px;
+            overflow-y: auto;
+            vertical-align: top;
+            background-image: url('/image/sidecolum1.png');
+        }
+
+        /* 移除原来的 .auto-style6 定义，或者保留但改名 */
+        .sidebar-style {
+            width: 170px;
+            padding-top: 30px;
+            height: 500px;
+            overflow-y: auto;
+            vertical-align: top;
+            background-image: url('/image/sidecolum1.png');
+        }
+        .auto-style7 {
+            height: 43px;
+            text-align: center;
+        }
+        .content-cell {
+        width: 100%;       /* 占满除左侧170px外的所有空间 */
+        max-width: 900px;  /* 【核心】设置一个最大宽度，可根据需要调整，例如800px, 1000px */
+        vertical-align: top; /* 内容从顶部对齐，视觉上更统一 */
+    }
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style3" style="background-image: url('/image/logo.png')"></td>
+                    <td class="auto-style4" style="background-image: url('/image/banner2.png')"></td>
+                </tr>
+                <tr>
+                    <td id="sidebar-cell" class="auto-style6" style="background-image: url('/image/sidecolum1.png'); " rowspan="2">
+                      <asp:TreeView ID="TreeView1" runat="server" ForeColor="White" Width="182px" Height="20px">
+                            <Nodes>
+                                <asp:TreeNode Text="管理员" Value="管理员">
+                                    <asp:TreeNode NavigateUrl="~/admin/stuff/stuffadd.aspx" Text="信息录入" Value="管理员信息录入"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/admin/stuff/stuffedit.aspx" Text="信息维护" Value="信息维护"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="菜品" Value="菜品">
+                                    <asp:TreeNode NavigateUrl="~/admin/dish/dishadd.aspx" Text="菜品录入" Value="菜品录入"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/admin/dish/dishedit.aspx" Text="信息修改" Value="信息修改"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="顾客" Value="食客">
+                                    <asp:TreeNode NavigateUrl="~/admin/customer/customeradd.aspx.aspx" Text="新增顾客" Value="客户管理"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/admin/customer/customeredit.aspx" Text="维护信息" Value="信息维护"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/admin/statistic/tongjimanage.aspx" Text="信息统计" Value="信息统计"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/admin/ordermanagement/order.aspx" Text="订单管理" Value="订单"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/admin/password/oasswordedit.aspx" Text="修改密码" Value="修改密码"></asp:TreeNode>
+                                <asp:TreeNode Text="退出" Value="信息维护"></asp:TreeNode>
+                            </Nodes>
+                        </asp:TreeView>
+                        
+                    </td>
+                    <td class="auto-style7" style="background-image: url('/image/navbanner.png')">
+                        <asp:Panel ID="Panel1" runat="server" Height="42px" Width="1345px">
+                            <div class="nav-auto-style8">
+                                <asp:Label ID="Label1" runat="server" Text="欢迎回家(ﾉ&gt;ω&lt;)ﾉ！   @" style="font-family: 'Microsoft YaHei', sans-serif;font-weight: bold;font-size:25px;color:white"></asp:Label>
+                                &nbsp;<asp:Label ID="Label2" runat="server" Text=" "  style="font-family: 'Microsoft YaHei', sans-serif;font-weight: bold;font-size:25px;color:white;text-shadow:1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black"></asp:Label>
+                                &nbsp;&nbsp;
+                                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="退出登录"  OnClientClick="return confirm('诶呀，真的要走吗？Σ(ﾟДﾟ；≡；ﾟдﾟ)');" OnCommand="Button1_Click"  style="font-family:得意黑;font-size:15px;color:white;background-color:#FF8E25;"/>
+                            </div>
+                        </asp:Panel>
+                    </td>
+                </tr>
+                <!-- 修改为这样 -->
+                <tr>
+                    <td class="auto-style5 content-cell"> <!-- 这里添加了 content-cell 类 -->
+                        <br />
+                        <br />
+                        <br />
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                     </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+# Build output
+**/[Bb]in/
+**/[Oo]bj/
+
+# Visual Studio / Rider
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet packages (restore from packages.config)
+**/packages/
+!**/packages.config
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+~$*
+
+# Publish artifacts
+*.Publish.xml
+*.pubxml.user
+
+# Database and local data files (do not commit binary DB files)
+*.accdb
+*.mdb
+*.mdf
+*.ldf
+*.sqlite
+*.sqlite3
+*.db
+
+# OS files
+Thumbs.db
+Desktop.ini
+
